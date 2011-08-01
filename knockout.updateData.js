@@ -8,13 +8,15 @@
  */
 (function () {
 	/**
-	 * An update data function that lets you "update from js" without overriding all the view model properties and methods. You just need to supply
+	 * A function that lets you "update from js" without overriding all the view model properties and methods. You just need to supply
 	 * the viewModel, the original JS model on which you based your data (typically what you'd use in the mapping fromJS method), and the new JS 
 	 * object that has the updated information.
 	 * 
-	 * @param {Object} viewModel
-	 * @param {Object} dataModel
-	 * @param {Object} jsObject
+	 * @param Object	viewModel
+	 * @param Object	dataModel
+	 * @param Object	jsObject
+	 * 
+	 * @return Object (returns the viewModel)
 	 */
 	ko.mapping.updateData = function(viewModel, dataModel, jsObject) {
 		if (arguments.length < 3) throw new Error("When calling ko.updateData, pass: the view model, the data model, and the updated data.");
