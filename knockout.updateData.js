@@ -49,7 +49,7 @@
 		
 		for (var i in dataModel) {
 			if (i in viewModel && typeof dataModel[i] != 'function') {
-				data[i] = viewModel[i]();
+				data[i] = ko.utils.unwrapObservable(viewModel[i]);
 			}
 		}
 		
