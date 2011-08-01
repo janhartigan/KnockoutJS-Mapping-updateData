@@ -23,7 +23,7 @@
 		if (!viewModel) throw new Error("The view model is undefined.");
 		
 		for (var i in dataModel) {
-			if (i in jsObject && i in viewModel) {
+			if (i in jsObject && i in viewModel && typeof dataModel[i] != 'function') {
 				viewModel[i](jsObject[i]);
 			}
 		}
@@ -48,7 +48,7 @@
 		if (!viewModel) throw new Error("The view model is undefined.");
 		
 		for (var i in dataModel) {
-			if (i in viewModel) {
+			if (i in viewModel && typeof dataModel[i] != 'function') {
 				data[i] = viewModel[i]();
 			}
 		}
