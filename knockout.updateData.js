@@ -31,31 +31,5 @@
 		return viewModel;
 	}
 	
-	
-	/**
-	 * A function that lets you do "toJS" based on your mapping data model that you used in the ko.mapping.fromJS method. You just need to supply
-	 * the viewModel and the original JS model on which you based your data. This will return a 
-	 * 
-	 * @param Object	viewModel
-	 * @param Object	dataModel
-	 * 
-	 * @return Object (basically the dataModel with current values filled in
-	 */
-	ko.mapping.gatherData = function(viewModel, dataModel) {
-		var data = {};
-		
-		if (arguments.length < 2) throw new Error("When calling ko.gatherData, pass: the view model and the data model.");
-		if (!viewModel) throw new Error("The view model is undefined.");
-		
-		for (var i in dataModel) {
-			if (i in viewModel && typeof dataModel[i] != 'function') {
-				data[i] = ko.utils.unwrapObservable(viewModel[i]);
-			}
-		}
-		
-		return data;
-	}
-	
 	ko.exportSymbol('ko.mapping.updateData', ko.mapping.updateData);
-	ko.exportSymbol('ko.mapping.gatherData', ko.mapping.gatherData);
 })();
