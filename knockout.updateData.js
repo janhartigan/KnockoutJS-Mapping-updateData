@@ -31,5 +31,5 @@
 		return viewModel;
 	}
 	
-	ko.exportSymbol('ko.mapping.updateData', ko.mapping.updateData);
+	ko.exportSymbol('mapping.updateData', ko.mapping.updateData);
 })();
